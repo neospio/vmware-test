@@ -15,7 +15,7 @@
             <div class="inputText" ng-click="editable = 'password'" ng-hide="editable == 'password'">{{getPasswordDisplay(newUser.password)}}</div>
             <input ng-show="editable == 'password'" ng-blur="editable = null" type="password" class="form-control" ng-model="newUser.password" ng-model-on-enter required>
             <label>Gender:</label>
-            <span ng-click="editable = 'gender'" ng-hide="editable == 'gender'">{{newUser.gender}}</span>
+            <span class="inputText" ng-click="editable = 'gender'" ng-hide="editable == 'gender'">{{newUser.gender}}</span>
             <select ng-show="editable == 'gender'" ng-blur="editable = null" ng-model="newUser.gender">
                 <option value="male">Male</option>
                 <option value="female">Female</option>
