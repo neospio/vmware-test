@@ -14,6 +14,7 @@ Use angular best practices, don’t put all your code on one page.
 
 =========
 How to run:
-1. git clone it into your sandbox
+1. git clone the repo into your sandbox
 2. npm install
 3. grunt serve
+4. Enjoy
