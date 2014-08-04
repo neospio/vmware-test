@@ -1,0 +1,38 @@
+<div class="container">
+    <h2>Sign Up</h2>
+    <div>
+        <form ng-submit="register()">
+            <label>User Name:</label>
+            <div class="inputText" ng-click="editable = 'username'" ng-hide="editable == 'username'">{{newUser.username}}</div>
+            <input ng-show="editable == 'username'" ng-blur="editable = null" type="text" class="form-control" ng-model="newUser.username" ng-model-on-enter required>
+            <label>First Name:</label>
+            <div class="inputText" ng-click="editable = 'firstname'" ng-hide="editable == 'firstname'">{{newUser.firstname}}</div>
+            <input ng-show="editable == 'firstname'" ng-blur="editable = null" type="text" class="form-control" ng-model="newUser.firstname" ng-model-on-enter required>
+            <label>Last Name:</label>
+            <div class="inputText" ng-click="editable = 'lastname'" ng-hide="editable == 'lastname'">{{newUser.lastname}}</div>
+            <input ng-show="editable == 'lastname'" ng-blur="editable = null" type="text" class="form-control" ng-model="newUser.lastname" ng-model-on-enter required>
+            <label>Password:</label>
+            <div class="inputText" ng-click="editable = 'password'" ng-hide="editable == 'password'">{{getPasswordDisplay(newUser.password)}}</div>
+            <input ng-show="editable == 'password'" ng-blur="editable = null" type="password" class="form-control" ng-model="newUser.password" ng-model-on-enter required>
+            <label>Gender:</label>
+            <span ng-click="editable = 'gender'" ng-hide="editable == 'gender'">{{newUser.gender}}</span>
+            <select ng-show="editable == 'gender'" ng-blur="editable = null" ng-model="newUser.gender">
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select>
+            <div>
+                <input type="checkbox" ng-model="newUser.confirm" ng-true-value="yes" ng-false-value="no" required>
+                I Agree to the <a href="#">terms</a> and want to register!</div>
+            <button class="btn btn-primary" ng-disabled="form.$invalid">Register</button>
+        </form>
+        <br>
+        <pre>user model = {{newUser | json}}</pre>
+        <ul>
+                <span ng-click="editing = true" ng-hide="editing">{{todo.text}}</span>
+                <span ng-show="editing">
+                    <input type="text" class="form-control" ng-model="todo.text" ng-blur="editing = false" ng-required>
+                    <a data-ng-click="editing = false" class="glyphicon glyphicon-ok"></a>
+                </span>
+        </ul>
+    </div>
+</div>
